@@ -1,12 +1,12 @@
 # Laboratorium - monitory
 
 Do laboratorium zostały dołączone przykłady:
-- [BlockingQueue.java]()
-- [BlockingQueueTest,java]()
-- [Pair.java]()
-- [PairTest.java]()
-- [Swapper.java]()
-- [SwapperTest.java]()
+- [BlockingQueue.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/BlockingQueue.java)
+- [BlockingQueueTest,java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/BlockingQueueTest.java)
+- [Pair.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/Pair.java)
+- [PairTest.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/PairTest.java)
+- [Swapper.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/Swapper.java)
+- [SwapperTest.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/SwapperTest.java)
 
 Tematem zajęć są prymitywne (”niskopoziomowe”) mechanizmy synchronizacji wątków w Javie. Są one uproszczoną formą monitorów.
 
@@ -30,7 +30,7 @@ Alternatywnym dla instrukcji `synchronized` sposobem założenia zamka jest opat
 
 Zdjęcie zamka z obiektu, na którym czekają jakieś wątki, powoduje odwieszenie jednego z nich. To, który wątek z grupy oczekujących zostanie odwieszony, nie jest określone. W szczególności nie ma gwarancji, że będzie to ten wątek, który czekał najdłużej.
 
-Dla definicji klasy [Pair.java]() program [PairTest.java]() demonstruje działanie zamków.
+Dla definicji klasy [Pair.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/Pair.java) program [PairTest.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/PairTest.java) demonstruje działanie zamków.
 
 Zwracamy uwagę, że tylko instrukcje `synchronized` oraz metody z modyfikatorem synchronized respektują zamki. Usunięcie modyfikatora z metody `zamień()` lub `sąRówne()` w klasie `Para<T>` powoduje, że wynik może być niezerowy.
 
@@ -54,14 +54,14 @@ Nawet, jeżeli chcemy obudzić jeden wątek, często używamy do tego metody `no
 
 Użycie `notifyAll()` pozwala też uniknąć problemu zagubionego budzenia. W przypadku, gdy użycie `notify()` zbiegnie się w czasie z przerwaniem budzonego wątku, może się zdarzyć, że żaden wątek nie zostanie obudzony z wykonania `wait()`.
 
-Definicja klasy [Swapper.java]() wraz z programem [SwapperTest.java]() demonstruje wstrzymywanie wątków.
+Definicja klasy [Swapper.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/Swapper.java) wraz z programem [SwapperTest.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/SwapperTest.java) demonstruje wstrzymywanie wątków.
 
 ### Ćwiczenie punktowane
 
-Uzupełnij implementację kolejki blokującej `BlockingQueue.java`.
+Uzupełnij implementację kolejki blokującej [BlockingQueue.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/BlockingQueue.java).
 
 Wątki synchronizuj za pomocą mechanizmów z dzisiejszych zajęć.
 
-Implementacja powinna przechodzić dwa pierwsze testy z pliku `BlockingQueueTest.java`.
+Implementacja powinna przechodzić dwa pierwsze testy z pliku [BlockingQueueTest.java](https://github.com/Emilo77/SEM5-PW-LAB06/blob/master/BlockingQueueTest.java).
 
 Opcjonalnie (zadanie niepunktowane) zaimplementuj kolejki o pojemności 0, które pozwolą na realizację mechanizmu **rendezvous**. Chodzi o to, aby dwa wątki musiały się "spotkać", aby przekazać sobie obiekt, bez pośrednictwa bufora. Wątek, który chce coś włożyć do kolejki, musi poczekać, aż ktoś zgłosi chęć wyjęcia obiektu z kolejki. 
